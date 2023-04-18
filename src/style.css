@@ -1,0 +1,13 @@
+body {
+    background-color: aliceblue;
+}
+
+.box {
+    border: black 1px solid;
+}
+
+#chat-history {
+    background-color: white;
+    color: red;
+    height: 100px;
+}
