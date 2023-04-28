@@ -1,29 +1,43 @@
-let chatUser = 0;
+const BROADCASTER = "broadcaster";
+const RECEIVER = "receiver";
+const SYSTEM = "system";
 
-const makeMsgNode = (msg) => {
-    const msgNode = document.createElement("div");
-    msgNode.className = `chat-message-${chatUser}`;
-    msgNode.innerText = msg;
+const main = () => {
+    initForm();
+    addToHistory("Chat is ready....", SYSTEM);
+}
 
-    chatUser = +!chatUser;
-    return msgNode;
+const initForm = () => {
+    const onSubmit = (e) => {
+        e.preventDefault();
+        broadcast(e.value)
+    }
+
+    const form = document.getElementById("chatInputForm");
+    form.addEventListener("submit", onSubmit);
 }
 
 const broadcast = (msg) => {
+    addToHistory(msg, BROADCASTER);
+    receive("OK!");
+}
+
+const receive = (msg) => {
+    addToHistory(msg, RECEIVER)
+}
+
+const addToHistory = (msg, sourceId) => {
+    const msgElement = makeMsgElement(msg, sourceId);
     const chatHistory = document.getElementById("chat-history");
-    chatHistory.appendChild(makeMsgNode(msg));
+    chatHistory.appendChild(msgElement);
 }
 
-const onSubmit = (e) => {
-    e.preventDefault();
-    broadcast(e.value)
-}
+const makeMsgElement = (msg, sourceId) => {
+    const msgElement = document.createElement("div");
+    msgElement.className = `chat-message-${sourceId}`;
+    msgElement.innerText = msg;
 
-const main = () => {
-  const form = document.getElementById("chatInputForm");
-  form.addEventListener("submit", onSubmit);
-
-  broadcast("Chat is ready....");
+    return msgElement;
 }
 
 window.onload = () => {

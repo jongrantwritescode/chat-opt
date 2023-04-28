@@ -23,11 +23,15 @@ body {
     flex-direction: column;
 }
 
-.chat-message-0 {
+.chat-message-system {
+    font-weight: bolder;
+}
+
+.chat-message-broadcaster {
     text-align: left;
 }
 
-.chat-message-1 {
+.chat-message-receiver {
     text-align: right;
 }
 
