@@ -18,4 +18,19 @@ body {
     color: #1FC742;
     height: 100%;
     width: 50%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message-0 {
+    text-align: left;
+}
+
+.chat-message-1 {
+    text-align: right;
+}
+
+.success::after {
+    content: "✓";
 }
