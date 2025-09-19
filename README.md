@@ -1,6 +1,8 @@
 # Chat OPT
 A chat client for Other People Talking
 
+_For this project I was teaching the course at Hinge Health as part of our bootcamp for non-developers_
+
 A learning environment created with credit to [@blackgirlbytes](https://github.com/blackgirlbytes) via their [article](https://dev.to/github/how-to-run-a-frontend-workshop-in-codespaces-2ede)
 
 ## Goals of this repo
